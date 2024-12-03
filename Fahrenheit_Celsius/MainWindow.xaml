@@ -1,0 +1,35 @@
+﻿<Window x:Class="Fahrenheit_Celsius.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fahrenheit_Celsius"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Fanhrenheit:" Grid.Row="0" VerticalAlignment="Top" Margin="10" Height="30" FontSize="14" FontWeight="Bold"/>
+        <TextBlock  x:Name="_FTextBlock" Grid.Row="0" Margin="10,36,50,50" TextAlignment="Left" VerticalAlignment="Center"  FontSize="15" 
+                    Panel.ZIndex="0" Text="Введите значения в Фарингейтах что бы перевести в Цельсии..."  FontWeight="UltraLight" />
+        
+        <TextBox  x:Name="_FTextBox" Grid.Row="0" Margin="10,36,50,50" TextAlignment="Left" VerticalAlignment="Center" FontSize="20" Panel.ZIndex="1"
+                  Text="{Binding Fanhrenheit}" Background="Transparent" TextChanged="_FTextBox_TextChanged" />
+        <Button  x:Name="_FButton" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="30" Margin="10" Width="150" Content="Перевести в Цельсии" Click="_FButton_Click"/>
+        <TextBlock  x:Name="_FTextBlock2" Text="{Binding FResult}" FontWeight="UltraLight" 
+                    Grid.Row="0" VerticalAlignment="Bottom" Margin="170,10,10,10"  FontSize="20" HorizontalAlignment="Left" Height="30"  Width="380"  />
+
+        
+        
+        <Label Content="Celsius:" Grid.Row="1" VerticalAlignment="Top" Margin="10" Height="30" FontSize="14" FontWeight="Bold"/>
+        <TextBlock  x:Name="_CTextBlock" Grid.Row="1" Margin="10,36,50,50" TextAlignment="Left" FontSize="15" 
+             Panel.ZIndex="0" Text="Введите значение в Цельсиях что бы перевести в Фаренгейты" VerticalAlignment="Center" FontWeight="UltraLight"/>
+        <TextBox  x:Name="_CTextBox" Grid.Row="1" Margin="10,36,50,50" Text="{Binding Celsius}" TextAlignment="Left" FontSize="30" Panel.ZIndex="1" Background="Transparent" TextChanged="_CTextBox_TextChanged" />
+        <Button  x:Name="_CButton" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="30" Margin="10" Width="150" Content="Перевести в Фаренгейт" Click="_CButton_Click"/>
+        <TextBlock  x:Name="_CTextBlock2" Grid.Row="1" Text="{Binding CResult}" FontWeight="UltraLight" VerticalAlignment="Bottom" Margin="170,10,10,10"  FontSize="20" HorizontalAlignment="Left" Height="30"  Width="380" />
+
+    </Grid>
+</Window>
